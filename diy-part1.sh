@@ -21,7 +21,7 @@ git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverc
 git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
 git clone https://github.com/fw876/helloworld package/helloworld
 rm -rf package/lean/luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 #svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
 #svn co https://github.com/kenzok8/small/trunk/brook package/brook
 #svn co https://github.com/kenzok8/small/trunk/chinadns-ng package/chinadns-ng
