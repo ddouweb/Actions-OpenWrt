@@ -20,8 +20,6 @@ on:
         default: 'true'
 #  schedule:
 #    - cron: 0 8 * * 5
-  push:
-    branches: [ master ]
   watch:
     types: started
 env:
