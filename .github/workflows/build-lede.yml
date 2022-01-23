@@ -20,6 +20,8 @@ on:
         default: 'true'
 #  schedule:
 #    - cron: 0 8 * * 5
+  push:
+    branches: [master]
   watch:
     types: started
 env:
@@ -81,9 +83,10 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
-      if:(!cancelled())
+      if: (!cancelled())
       #if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
       env:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
