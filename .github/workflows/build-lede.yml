@@ -38,7 +38,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
 
     steps:
     - name: Checkout
@@ -166,11 +166,11 @@ jobs:
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
-    - name: Delete workflow runs
-      uses: GitRML/delete-workflow-runs@main
+    - name: Remove old Artifacts
+      uses: c-hive/gha-remove-artifacts@v1.2.0
       with:
-        retain_days: 1
-        keep_minimum_runs: 3
+        age: '1 day'
+        skip-recent: 3
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.1.0
