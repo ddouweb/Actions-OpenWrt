@@ -8,6 +8,8 @@ on:
         description: 'SSH connection to Actions'
         required: true
         default: 'true'
+env:
+  SSH_ACTIONS: true
 jobs:
   build:
     runs-on: ubuntu-20.04
