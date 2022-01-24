@@ -7,11 +7,7 @@ on:
       ssh:
         description: 'SSH connection to Actions'
         required: true
-        default: 'true'
-#  schedule:
-#    - cron: 0 8 * * 5
-  watch:
-    types: started
+        default: 'false'
 env:
   REPO_URL: https://github.com/ddouweb/lede
   REPO_BRANCH: master

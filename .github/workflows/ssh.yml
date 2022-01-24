@@ -8,10 +8,6 @@ on:
         description: 'SSH connection to Actions'
         required: true
         default: 'true'
-#  schedule:
-#    - cron: 0 8 * * 5
-  watch:
-    types: started
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -20,7 +16,7 @@ jobs:
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
-      if: (!cancelled())
+      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
       env:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
